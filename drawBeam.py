@@ -7,6 +7,22 @@ acad=Autocad()     ###create_if_not_exists=True
 print(acad.doc.Name)
 doc=acad.ActiveDocument
 ms=doc.ModelSpace
+
+# creating a new layer
+def create_layer(name, color):
+    layer = acad.ActiveDocument.Layers.Add(name)
+    layer.color = color
+
+create_layer('Beam_LSection', 1)  # Color index 1 represents red. Change it according to your requirements.
+create_layer('text', 2)
+create_layer('Long_repar', 3)
+create_layer('rebar_section',4)
+create_layer('strrp',5)
+create_layer('Stirrups_sides',6)
+create_layer('Stirrups_center',7)
+create_layer('Section_line',8)
+create_layer('Beam_CSection',9)
+
 z=0
 N=int(input('Enter No Of Storey : '))
 
